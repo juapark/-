@@ -86,24 +86,24 @@
     <h1>Safety Helmet Detection</h1>
     <nav>
         <ul>
-          <li><a href="a.html"><button class="no-border-button">Log In</button></a></li>
             <li><a href="#">헬멧 감지</a></li>
-            <li><a href="#">작업자 정보 등록</a></li>
-            <li><a href="#">헬멧 감지 이력</a></li>
-            <li><a href="#">e</a></li>
+            <li><a href="/history">헬멧 감지 이력</a></li>
+            <li><a href="/register">작업자 정보 등록</a></li>
+            <li><a href="#">설정</a></li>
         </ul>
     </nav>
     <div class="container-sm">
       <form action = "http://localhost:9999/file_upload" method = "POST"
          enctype = "multipart/form-data">
          <input type = "file" name = "file" id="sub1"/>
+<!--          <input type="file" class="upload-name" value="첨부파일" placeholder="첨부파일">-->
          <button type = "submit" id="sub">제출</button>
       </form>
     </div>
-    <div class="filebox">
-    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
-    <label for="file">파일찾기</label>
-    <input type="file" id="file">
+<!--    <div class="filebox">-->
+<!--    <input class="upload-name" value="첨부파일" placeholder="첨부파일">-->
+<!--    <label for="file">파일찾기</label>-->
+<!--    <input type="file" id="file">-->
 </div>
 </body>
 </html>

@@ -6,7 +6,7 @@ from PIL import Image
 app = Flask(__name__)
 
 # 현재 작업하는 프로젝트 경로
-path = '/Users/parkjua/PycharmProjects/pythonProject1/'
+path = '/Users/parkjua/PycharmProjects/pythonProject1/2023-hanium/'
 
 # 메인 페이지 실행하는 함수
 @app.route('/')
@@ -40,6 +40,7 @@ def yolo_predict(filename):
     output_filename = path + 'static/output_images/' + filename + '_output.png'
     image.save(output_filename)
 
+
     # 감지 결과 사진 리턴
     return filename + '_output.png', head_count, helmet_count
 
@@ -65,6 +66,15 @@ def file_upload():
     else:
         return render_template('main.html')
 
+@app.route('/history')
+def history():
+    # 헬멧 감지 이력 페이지를 렌더링합니다.
+    return render_template('history.html')
+
+@app.route('/register')
+def register():
+    # 헬멧 감지 이력 페이지를 렌더링합니다.
+    return render_template('register.html')
 
 if __name__ == '__main__':
     app.run(port="9999", debug=True)

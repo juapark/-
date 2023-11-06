@@ -1,0 +1,22 @@
+<!-- history.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>헬멧 감지 이력</title>
+</head>
+<body>
+  <h1>헬멧 감지 이력</h1>
+  <ul>
+    {% for image_info in image_history %}
+    <li>
+      <h3>헬멧 감지 사진</h3>
+      <p>원본 이미지: <a href="{{ url_for('static', filename=image_info.original_image) }}" target="_blank">{{ image_info.original_image }}</a></p>
+      <p>결과 이미지: <a href="{{ url_for('static', filename=image_info.output_image) }}" target="_blank">{{ image_info.output_image }}</a></p>
+      <p>head: {{ image_info.head_count }}명, helmet: {{ image_info.helmet_count }}명</p>
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
