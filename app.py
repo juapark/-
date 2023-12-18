@@ -71,10 +71,17 @@ def history():
     # 헬멧 감지 이력 페이지를 렌더링합니다.
     return render_template('history.html')
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    # 헬멧 감지 이력 페이지를 렌더링합니다.
-    return render_template('register.html')
+    if request.method == 'POST':
+        # 폼에서 전송된 데이터 가져오기
+        name = request.form.get('name')
+        birth = request.form.get('birth')
+        gender = request.form.get('gender')
+        position = request.form.get('position')
+        return render_template('register_complete.html', name=name, birth=birth, gender=gender, position=position)
+    else:
+        return render_template('register.html')
 
 if __name__ == '__main__':
     app.run(port="9999", debug=True)
